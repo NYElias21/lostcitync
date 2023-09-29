@@ -43,7 +43,7 @@ body{
 }
 
 .hero{
-    background-image: url('backgroundHero.jpeg');
+    background-image: url('media/backgroundHero.jpeg');
     background-size: cover;
     padding: 200px 0px;
     color: white;
@@ -120,6 +120,23 @@ body{
     right: -20px;
 }
 
+.image-item-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-topic {
+    font-size: 16px;
+    margin-top: 8px;
+    color: white;
+}
+
+.image-title {
+    font-size: 22px; /* You can adjust as needed */
+    margin-top: 8px; /* You can adjust as needed */
+    color: white; /* Or any color that is visible on your background */
+}
+
 .slider-wrapper .image-list {
     display: grid;
     gap: 18px;
@@ -132,7 +149,7 @@ body{
 .slider-wrapper .image-list::-webkit-scrollbar {
     display: none;
 }
-.slider-wrapper .image-list .image-item {
+.slider-wrapper .image-list .image-item-wrapper .image-item {
     width: 325px;
     height: 400px;
     object-fit: cover;
