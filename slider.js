@@ -5,6 +5,37 @@ const initSlider = () => {
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
     const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth; //max amount you can scroll horizontally
 
+    //handle scrollbar thumb drag
+    scrollbarThumb.addEventListener("mousedown", (e) => { //listens for when mouse button is pressed down on it
+        const startX = e.clientX; //store initial values. startX stores horizontal mouse position when 'mousedown' even occurs
+        const thumbPosition = scrollbarThumb.offsetLeft; //stores the initial position of the 'scrollbarThumb' from the left edge of container
+
+        //update thumb positoin on mouse move
+        const handleMouseMove = (e) => {
+            const deltaX = e.clientX - startX; //calculates the new thumb position. deltaX: difference in horizontal position of the mouse b/w current 'mousemove' event and 'mousedown' event
+            const newThumbPosition = thumbPosition + deltaX; //new desired position of the 'scrollbarThumb' is calculated by addind 'deltaX' to initial position
+            const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+            //restrict it from going outside bar area
+            const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition)); //prevents it from going outside scrollbar area
+            const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
+            //updated the actual position of the ''scrollbarThumb' and the scroll position of the content ('imageList)
+            scrollbarThumb.style.left = `${boundedPosition}px`; 
+            imageList.scrollLeft = scrollPosition;
+        }
+
+        //remove event listeners on mouse up
+        const handleMouseUp = () => {
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseup", handleMouseUp);
+        }
+
+        //add event listeners for drag interaction
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+    });
+
     //slide images according to the slide button clicks
     slideButtons.forEach(button => { //forEach Loop
         button.addEventListener("click", () => { //adding event listener, for each 'button', an event listener is added for the "click" event.
