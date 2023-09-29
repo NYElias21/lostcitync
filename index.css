@@ -1,0 +1,132 @@
+body{
+    margin: 0px;
+    font-family: 'Inter';
+}
+
+.topnav {
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.topnavContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+    width: 190px; /* Set to your preferred width */
+    max-width: 100%; /* Allows scaling down if the viewport is narrower than the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 14px;
+}
+
+.topnav a:hover {
+    background-color: #264653;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+}
+
+.hero{
+    background-image: url('backgroundHero.jpeg');
+    background-size: cover;
+    padding: 200px 0px;
+    color: white;
+}
+
+.heroContainer{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heroHeading {
+    color: #fff;
+    margin-bottom: 15px;
+    font-family: 'Archivo Black','sans-serif';
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.heroContainer p {
+    max-width: 45ch;
+    color: #fff;
+    font-size: 16px;
+}
+
+.blogSection{
+    background-color: black;
+    color: white;
+    padding: 50px 0;
+    min-height: 500px;
+}
+
+.topicHeading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1200px;
+    width: 95%;
+}
+.slider-wrapper .image-list {
+    display: grid;
+    gap: 18px;
+    font-size: 0;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    grid-template-columns: repeat(10, 1fr);
+}
+.slider-wrapper .image-list::-webkit-scrollbar {
+    display: none;
+}
+.slider-wrapper .image-list .image-item {
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.container .slider-scrollbar{
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+    height: 2px;
+    width: 100%;
+    background: rgb(152, 152, 152);
+    position: relative;
+    border-radius: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: rgb(255, 255, 255);
+    border-radius: inherit;
+    cursor: grab;
+}
+
