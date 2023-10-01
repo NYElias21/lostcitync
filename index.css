@@ -219,3 +219,79 @@ body{
         width: 20%;
     }
 }
+
+/* Newsletter Footer*/
+
+.footerNewsletter {
+    color: #fff;
+    padding: 50px 30px 40px;
+    position: relative;
+}
+
+.containerFooter {
+    width: 100%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footerForm {
+    background-image: url('media/footerImg.jpeg');
+    background-size: cover;
+    background-position: center;
+    /*background-color: rgb(61, 79, 91);*/
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 64px;
+    text-align: center;
+}
+
+.footerForm > * { /*targets every direct child of .footerFrom */
+    position: relative; /*ensures that the z-index value applies to all of the childrem */
+    z-index: 2; /*position every direct child of .footerForm above the ::before, text and form elements are visible on top of the gradient */
+}
+
+
+.footerForm::before { /* the ::before pseudo-element is used to create a visual overlay effect on the .footerForm element */
+    content: ""; /* necessary for the pseudo-element to work */
+    position: absolute; /* so that it doesn't affect the layout of other elements */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28));
+    z-index: 1; /* So that it stays below the content of the footerForm */
+}
+
+.footer-title {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.footer-form-block {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.emailInput {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: #000;
+}
+
