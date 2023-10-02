@@ -10,7 +10,27 @@
 </head>
 <body>
     <div id="topnav"></div>
-    <h1>The Crew</h1>
+    <div class="itinerary">
+        <div class="itineraryContainer">
+            <form action="" id="itineraryForm" class="itinerary-form">
+                <h1>North Carolina Itinerary Maker</h1>
+                <input type="text" placeholder="Enter city" id="city" name="city">
+                <input type="date" placeholder="Date" id="date" name="date">
+                    <div class="categories">
+                        <h2>Pick categories:</h2>
+                        <label><input type="checkbox" id="foodDrinkCheckbox" name="category" value="Food & drink">Food & Drink</label>
+                        <label><input type="checkbox" id="thingsToDoCheckbox" name="category" value="Things to do">Things to do</label>
+                        <label><input type="checkbox" id="shoppingCheckbox" name="category" value="Shopping">Shopping</label>
+                    </div>
+                    <div class="topics">
+                        <h2>Pick Topics:</h2>
+                    </div>
+                <button type="submit">Generate Itinerary</button>
+            </form>
+            </div>
+        </div>
+    </div>
     <script src="navbar.js"></script>
+    <script src="itinerary.js"></script>
 </body>
 </html>
